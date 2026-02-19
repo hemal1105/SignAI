@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;900&display=swap');
+
+:root {
+  --primary-purple: #7B2CBF;
+  --sky-blue: #4CC9F0;
+  --sunny-yellow: #FFD60A;
+  --grass-green: #70E000;
+  --coral-pink: #FF4D6D;
+  --bg-soft: #F0F7FA;
+  --card-radius: 35px;
+  --bubbly-shadow: 0 10px 0px rgba(0, 0, 0, 0.1);
+  --nav-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}

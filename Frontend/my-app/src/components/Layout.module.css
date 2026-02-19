@@ -1,0 +1,49 @@
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #7209B7; /* matches your primary-purple */
+  text-decoration: none;
+}
+
+.navLinks a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #444;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.navLinks a:hover {
+  background: #f0f0f0;
+}
+
+.active {
+  background: #4CC9F0 !important; /* matches your soft-blue */
+  color: white !important;
+}
+
+.mainContent {
+  flex: 1;
+  background-color: #f8f9fa;
+}
