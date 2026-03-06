@@ -1,0 +1,22 @@
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.webcam {
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+.button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #0070f3;
+}

@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# --- AI & Machine Learning ---
+# Ignore the raw image datasets (They are too large for Git)
+AI_Model/dataset_frames/
+AI_Model/datasets/
+
+# Ignore the virtual environment
+AI_Model/venv/
+Backend/venv/
+
+# --- Frontend ---
+# Ignore the heavy node_modules folder
+**/node_modules/
+
+# --- Logs & OS Files ---
+.DS_Store
+*.log

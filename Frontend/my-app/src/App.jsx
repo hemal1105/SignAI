@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard';
 import Learn from './pages/Learn';
 import Translate from './pages/Translate';
 import Progress from './pages/Progress';
+import Emotions from './pages/Emotions';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/learn" element={<Learn />} />
           <Route path="/translate" element={<Translate />} />
           <Route path="/progress" element={<Progress />} />
+             <Route path="/emotions" element={<Emotions />} />
         </Routes>
       </Layout>
     </Router>

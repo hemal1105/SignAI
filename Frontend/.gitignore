@@ -22,3 +22,21 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# --- AI & Machine Learning ---
+# Ignore the raw image datasets (They are too large for Git)
+AI_Model/dataset_frames/
+AI_Model/datasets/
+
+# Ignore the virtual environment
+AI_Model/venv/
+Backend/venv/
+
+# --- Frontend ---
+# Ignore the heavy node_modules folder
+**/node_modules/
+
+# --- Logs & OS Files ---
+.DS_Store
+*.log
