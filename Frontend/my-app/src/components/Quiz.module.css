@@ -1,0 +1,273 @@
+:root {
+    --text-yellow: #ffbe0b;
+    --bg-orange: #fb5607;
+    --btn-green: #06d6a0;
+    --btn-red: #ef476f;
+    --bg-page: #e0fbfc;
+}
+
+/* 1. Main Layout */
+.quizPage {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    margin-top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title {
+    color: #6a4c93;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.quizContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    padding-bottom: 6rem;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid white;
+    background-color: white;
+    box-shadow: 0 5px 0px #cbd5e1, 0 10px 10px rgba(0, 0, 0, 0.1);
+    color: var(--btn-red);
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.closeBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0px #cbd5e1, 0 12px 12px rgba(0, 0, 0, 0.1);
+}
+
+.closeBtn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0px #cbd5e1, 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Image Display */
+.imageCard {
+    background-color: white;
+    border: 8px solid white;
+    border-radius: 30px;
+    box-shadow: 0 15px 0px #cbd5e1, 0 20px 25px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 250px;
+}
+
+/* 3. The 2x2 Grid */
+.optionsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 4. The Answer Buttons */
+.optionBtn {
+    background-color: white;
+    color: var(--bg-orange);
+    border: 6px solid white;
+    border-radius: 25px;
+    font-size: 5rem;
+    font-weight: 900;
+    padding: 2rem 0;
+    cursor: pointer;
+    box-shadow: 0 10px 0px #cbd5e1, 0 15px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.optionBtn:not(:disabled):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 0px #cbd5e1, 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.optionBtn:not(:disabled):active {
+    transform: translateY(5px);
+    box-shadow: 0 5px 0px #cbd5e1, 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.optionBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+/* 5. Feedback States */
+.correctBtn {
+    background-color: var(--btn-green);
+    color: white;
+    border-color: var(--btn-green);
+    box-shadow: 0 10px 0px #049f76, 0 0 30px rgba(6, 214, 160, 0.6);
+}
+
+.wrongBtn {
+    background-color: var(--btn-red);
+    color: white;
+    border-color: var(--btn-red);
+    box-shadow: 0 10px 0px #c1121f;
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(4px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-8px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(8px, 0, 0);
+    }
+}
+
+/* 6. Summary Screen */
+.summaryContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    padding: 4rem 2rem;
+    border-radius: 40px;
+    box-shadow: 0 20px 0px #cbd5e1, 0 25px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.summaryTitle {
+    font-size: 3rem;
+    color: var(--bg-orange);
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.starsText {
+    font-size: 5rem;
+    margin: 1rem 0 3rem 0;
+}
+
+.actionBtn {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 4px solid white;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s;
+}
+
+.playAgainBtn {
+    background-color: var(--btn-green);
+    color: white;
+    box-shadow: 0 8px 0px #049f76, 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.playAgainBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 11px 0px #049f76, 0 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.playAgainBtn:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0px #049f76, 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.backMapBtn {
+    background-color: var(--text-yellow);
+    color: white;
+    box-shadow: 0 8px 0px #d49f05, 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.backMapBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 11px 0px #d49f05, 0 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.backMapBtn:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0px #d49f05, 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 7. Quiz Title */
+.quizTitle {
+    color: #6a4c93;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .quizTitle {
+        font-size: 1.8rem;
+    }
+}

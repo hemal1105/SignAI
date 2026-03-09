@@ -1,0 +1,212 @@
+:root {
+  --text-yellow: #ffbe0b;
+  --bg-orange: #fb5607;
+  --btn-green: #06d6a0;
+  --bg-page: #e7f5ff;
+  /* Light blue from image_1 */
+}
+
+.modulePage {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0 !important;
+  /* This completely removes the blue gap */
+  margin-top: 0 !important;
+}
+
+/* Header (Simplified for consistency) */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* This pulls the title over next to the back button */
+  gap: 2rem;
+  /* This adds a nice space between the button and the title */
+  padding: 1rem 2rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.title {
+  color: #6a4c93;
+  /* Your project primary color */
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.navLinks button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: #555;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.navLinks button.active {
+  background-color: #f1f8fe;
+  color: #2196f3;
+  font-weight: bold;
+}
+
+/* Main Content Layout */
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.cardsContainer {
+  display: flex;
+  gap: 3rem;
+  /* Spacing between the boxes */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  /* Limits overall width */
+  margin-bottom: 2rem;
+}
+
+/* Card General Styling */
+.card {
+  flex: 1;
+  /* Both cards take equal width */
+  aspect-ratio: 1 / 1;
+  /* Keep them perfect squares */
+  background-color: white;
+  border-radius: 30px;
+  /* Deep rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 4px solid white;
+  /* Essential for the claymorphism look */
+
+  /* Thick 3D box shadows from your existing style */
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.1),
+    /* Simple external shadow */
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+  /* Simple external highlight */
+}
+
+/* Specific Card Interiors */
+.letterCard {
+  background-color: white;
+}
+
+.signCard {
+  background-color: #34b6f7;
+  /* Matches blue button background from image_3 */
+}
+
+/* Contents styling */
+.massiveLetter {
+  font-size: 16rem;
+  /* Huge letter */
+  font-weight: 900;
+  color: var(--bg-orange);
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  /* 3D text effect */
+}
+
+.massiveSignImage {
+  width: 90%;
+  /* Much larger than before */
+  height: 90%;
+  object-fit: contain;
+  /* Keeps the sign looking natural */
+}
+
+/* Navigation Controls */
+.navigationControls {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.arrowBtn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid white;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2), 0 15px 20px rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.prevBtn {
+  background-color: #34b6f7;
+  color: white;
+}
+
+.prevBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.nextBtn {
+  background-color: var(--bg-orange);
+  color: white;
+}
+
+.completedBtn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 6px solid white;
+  background-color: var(--text-yellow);
+  /* gold/yellow */
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.2), 0 20px 25px rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* End Screen Actions */
+.endScreenActions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.playQuizBtn {
+  height: 120px;
+  padding: 0 2rem;
+  border-radius: 60px;
+  border: 6px solid white;
+  background-color: #8338ec;
+  /* vibrant purple */
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 0 #5f25b2, 0 20px 25px rgba(0, 0, 0, 0.15);
+  -webkit-tap-highlight-color: transparent;
+}

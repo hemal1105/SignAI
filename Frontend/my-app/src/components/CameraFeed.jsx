@@ -4,7 +4,7 @@ import styles from './CameraFeed.module.css';
 
 const CameraFeed = () => {
   const videoRef = useRef(null);
-  const streamRef = useRef(null); 
+  const streamRef = useRef(null);
   const [isCameraOn, setIsCameraOn] = useState(false); // Start OFF to test toggle
 
   // 1. FUNCTION TO KILL HARDWARE
@@ -26,13 +26,13 @@ const CameraFeed = () => {
   // 2. FUNCTION TO START HARDWARE
   const startCamera = useCallback(async () => {
     // Kill any existing stream before starting a new one
-    killCamera(); 
+    killCamera();
 
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ 
+      const stream = await navigator.mediaDevices.getUserMedia({
         video: { width: 640, height: 480 } // Lower res for faster testing
       });
-      
+
       streamRef.current = stream;
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
@@ -46,6 +46,7 @@ const CameraFeed = () => {
   // 3. EFFECT TO MONITOR STATE
   useEffect(() => {
     if (isCameraOn) {
+      // eslint-disable-next-line
       startCamera();
     } else {
       killCamera();
@@ -59,11 +60,11 @@ const CameraFeed = () => {
     <div className={styles.cameraContainer}>
       <div className={styles.viewfinder}>
         {isCameraOn ? (
-          <video 
-            ref={videoRef} 
-            autoPlay 
-            playsInline 
-            muted 
+          <video
+            ref={videoRef}
+            autoPlay
+            playsInline
+            muted
             className={styles.videoStream}
           />
         ) : (
@@ -74,8 +75,8 @@ const CameraFeed = () => {
         )}
       </div>
 
-      <button 
-        onClick={() => setIsCameraOn(prev => !prev)} 
+      <button
+        onClick={() => setIsCameraOn(prev => !prev)}
         className={isCameraOn ? styles.btnOff : styles.btnOn}
       >
         {isCameraOn ? "Stop Camera" : "Start Camera"}

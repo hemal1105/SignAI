@@ -12,14 +12,6 @@ const Emotions = () => {
       .catch((err) => console.error("Webcam Error:", err));
   }, []);
 
-  useEffect(() => {
-  // This creates the "Live" feeling by asking the AI every 1 second
-  const interval = setInterval(() => {
-    captureAndPredict(); 
-  }, 1000); 
-
-  return () => clearInterval(interval); // Stops the camera loop when you leave the page
-}, []);
   const captureAndPredict = async () => {
     if (!videoRef.current || !canvasRef.current) return;
 
@@ -44,6 +36,15 @@ const Emotions = () => {
       }
     }, "image/jpeg");
   };
+
+  useEffect(() => {
+    // This creates the "Live" feeling by asking the AI every 1 second
+    const interval = setInterval(() => {
+      captureAndPredict();
+    }, 1000);
+
+    return () => clearInterval(interval); // Stops the camera loop when you leave the page
+  }, []);
 
   return (
     <div>

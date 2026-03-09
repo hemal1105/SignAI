@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Emotions from "./Emotions"; // Check if this file exists in src/pages/
 import styles from "./Learn.module.css";
 
 const Learn = () => {
   const [activeStep, setActiveStep] = useState(1);
+  const navigate = useNavigate();
 
   const steps = [
     { id: 1, label: "Alphabets" },
@@ -22,7 +25,14 @@ const Learn = () => {
             key={step.id}
             whileHover={{ scale: 1.1 }}
             className={`${styles.stepCircle} ${activeStep === step.id ? styles.current : ""}`}
-            onClick={() => setActiveStep(step.id)}
+            onClick={() => {
+              setActiveStep(step.id);
+              if (step.id === 1) {
+                navigate("/learn/alphabets");
+              } else if (step.id === 2) {
+                navigate("/learn/numbers");
+              }
+            }}
           >
             <span className={styles.number}>{step.id}</span>
             <p className={styles.label}>{step.label}</p>
@@ -31,7 +41,8 @@ const Learn = () => {
       </div>
 
       <div className={styles.module}>
-        {activeStep === 4 ? <Emotions /> : <p>Module content for step {activeStep} goes here</p>}
+        {activeStep === 4 && <Emotions />}
+        {activeStep !== 1 && activeStep !== 4 && <p>Module content for step {activeStep} goes here</p>}
       </div>
     </div>
   );
@@ -56,7 +67,7 @@ export default Learn;
 //       <h1 className={styles.title}>My Learning Path 🗺️</h1>
 //       <div className={styles.path}>
 //         {steps.map((step, index) => (
-//           <motion.div 
+//           <motion.div
 //             key={step.id}
 //             whileHover={{ scale: 1.1 }}
 //             className={`${styles.stepCircle} ${styles[step.status]}`}

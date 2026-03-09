@@ -2,9 +2,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import CameraFeed from '../components/CameraFeed';
 import styles from './Translate.module.css';
 import { Mic, MicOff } from 'lucide-react';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Translate = () => {
+// eslint-disable-next-line no-unused-vars
   const [output, setOutput] = useState("Show a sign..."); // For Sign to Voice
   const [isMicOn, setIsMicOn] = useState(false);
   const [liveSpeech, setLiveSpeech] = useState(""); // For Voice to Sign

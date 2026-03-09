@@ -3,6 +3,7 @@ from flask_cors import CORS
 import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
+import os
 
 # 1. INITIALIZE APP FIRST (Fixes NameError)
 app = Flask(__name__)
@@ -10,7 +11,9 @@ CORS(app)
 
 # 2. LOAD MODELS
 # Double check these paths are correct for your folder structure
-model = load_model("C:/termwork/Sem6/MiniProject/AI_Model/emotion_model.keras")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "AI_Model", "emotion_model.keras")
+model = load_model(MODEL_PATH)
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Ensure alphabetical order: bad, good, happy, sad, ugly

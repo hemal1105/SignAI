@@ -1,0 +1,152 @@
+:root {
+    --text-yellow: #ffbe0b;
+    --bg-orange: #fb5607;
+    --btn-green: #06d6a0;
+    --bg-page: #fef9f4;
+    /* Warm background for the map */
+}
+
+.levelsPage {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0 !important;
+    /* Forces the gap to close */
+    margin-top: 0 !important;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    /* This creates the physical space between the button and the title */
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.backBtn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #6a4c93;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 2rem;
+}
+
+.title {
+    color: var(--bg-orange);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* The Gamified Wave Path Layout */
+.pathContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem 6rem 2rem;
+    position: relative;
+    max-width: 100%;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* The dashed line down the middle */
+.dashedLine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 200%;
+    /* Wider to allow continuous sliding illusion without gap */
+    height: 0;
+    border-top: 10px dashed #cbd5e1;
+    border-left: none;
+    z-index: 0;
+}
+
+.levelWrapper {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+/* Wave offsets */
+.topWave {
+    transform: translateY(-40px);
+}
+
+.bottomWave {
+    transform: translateY(40px);
+}
+
+/* The 3D Circle Buttons */
+.levelCircle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    color: white;
+}
+
+.unlocked {
+    box-shadow:
+        0 10px 0px #049f76,
+        /* Thick 3D bottom shadow */
+        0 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+.unlocked:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 15px 0px #049f76,
+        0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.unlocked:active {
+    transform: translateY(5px);
+    box-shadow:
+        0 5px 0px #049f76,
+        0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.locked {
+    box-shadow: 0 10px 0px #a0a0a0;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.levelLabel {
+    position: absolute;
+    top: -25px;
+    background-color: white;
+    color: #6a4c93;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.levelTitle {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
