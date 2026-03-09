@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Dashboard.module.css';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 const Dashboard = () => {

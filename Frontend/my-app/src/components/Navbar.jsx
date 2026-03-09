@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -10,6 +11,7 @@ const Navbar = () => {
     { name: 'Home', path: '/', icon: '🏠' },
     { name: 'Learn', path: '/learn', icon: '📖' },
     { name: 'Translator', path: '/translate', icon: '🤖' },
+    { name: 'Quizzes', path: '/quizzes', icon: '🎮' },
     { name: 'Badges', path: '/progress', icon: '🏆' },
   ];
 

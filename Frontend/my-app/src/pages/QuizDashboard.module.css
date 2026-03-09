@@ -1,0 +1,127 @@
+:root {
+    --text-yellow: #ffbe0b;
+    --bg-orange: #fb5607;
+    --btn-green: #06d6a0;
+    --bg-page: #e7f5ff;
+    /* soft baby blue */
+    --card-purple: #8338ec;
+    /* vibrant purple */
+}
+
+.arcadePage {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-page);
+    min-height: calc(100vh - 80px);
+    /* minus header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+}
+
+.arcadeTitle {
+    font-size: 4rem;
+    color: #6a4c93;
+    margin-bottom: 4rem;
+    text-align: center;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    font-weight: 900;
+}
+
+.cardsContainer {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.arcadeCard {
+    flex: 1;
+    background-color: white;
+    border-radius: 40px;
+    border: 6px solid white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 15px 0 rgba(0, 0, 0, 0.15), inset 0 -10px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-tap-highlight-color: transparent;
+    min-height: 400px;
+}
+
+.arcadeCard:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 0 rgba(0, 0, 0, 0.1), inset 0 -10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.arcadeCard:active {
+    transform: translateY(10px) scale(0.98);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2), inset 0 -5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
+}
+
+.cardTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* Specific Card Colors */
+.alphabetCard {
+    background-color: var(--btn-green);
+    color: white;
+    border-color: #05b486;
+    box-shadow: 0 15px 0 #04936d, inset 0 -10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.alphabetCard:hover {
+    box-shadow: 0 25px 0 #04936d, inset 0 -10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.alphabetCard:active {
+    box-shadow: 0 5px 0 #04936d, inset 0 -5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.numberCard {
+    background-color: var(--bg-orange);
+    color: white;
+    border-color: #e54c04;
+    box-shadow: 0 15px 0 #cd4302, inset 0 -10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.numberCard:hover {
+    box-shadow: 0 25px 0 #cd4302, inset 0 -10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.numberCard:active {
+    box-shadow: 0 5px 0 #cd4302, inset 0 -5px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .cardsContainer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .arcadeTitle {
+        font-size: 3rem;
+    }
+
+    .arcadeCard {
+        min-height: 300px;
+    }
+}
