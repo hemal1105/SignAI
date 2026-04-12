@@ -1,4 +1,419 @@
-.container {
+/* Emotions.module.css */
+
+/* 1. GLOBAL ADVENTURE THEME [cite: 2026-03-09] */
+.container { 
+  background: radial-gradient(circle, #f0fbff 0%, #d9f4ff 100%); 
+  min-height: 100vh; 
+  font-family: 'Quicksand', 'Comic Sans MS', cursive; 
+  padding: 30px; 
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+}
+.guideOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50; /* Higher than the video but lower than countdown */
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faceOval {
+  width: 160px;
+  height: 220px;
+  border: 4px dashed #00FF00;
+  border-radius: 50%;
+  margin-top: 30px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+}
+
+.handBox {
+  width: 190px;
+  height: 190px;
+  border: 5px solid #00FF00;
+  margin-top: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+}
+
+.retakeBtn {
+  background: #ffbe0b;
+  color: #1a535c;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 800;
+  border: none;
+  box-shadow: 0 6px 0 #fbc02d;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.frozen .webcam {
+  filter: brightness(1.1); /* Keeps the image visible but "locked" */
+  border: 5px solid #ffbe0b;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 380px;
+  background: #000;
+  border-radius: 40px;
+  border: 10px solid #4ecdc4;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aiResult {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #1a535c;
+}
+.header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  max-width: 1200px; 
+  margin: 0 auto 30px auto; 
+  width: 100%;
+}
+
+.title { 
+  color: #ff6b6b; 
+  font-size: 2.8rem; 
+  font-weight: 900; 
+  text-shadow: 3px 3px #ffe66d; 
+}
+
+/* 2. HORIZONTAL SPLIT LAYOUT [cite: 2026-03-09] */
+.mainLayout { 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: flex-start; 
+  width: 100%; 
+  max-width: 1250px; 
+  margin: 0 auto; 
+  gap: 40px; 
+}
+
+.leftSection, .rightSection { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  max-width: 550px; 
+}
+
+/* 3. CAMERA SECTION (LEFT) [cite: 2026-02-28, 2026-03-09] */
+.videoWrapper { 
+  position: relative; 
+  border: 12px solid #4ecdc4; 
+  border-radius: 60px; 
+  box-shadow: 0 12px 0 #1a535c; 
+  background: #2d3436; 
+  width: 100%; 
+  height: 400px; 
+  overflow: hidden; 
+}
+
+.webcam { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.aiLabel { 
+  position: absolute; 
+  top: 20px; 
+  left: 20px; 
+  background: white; 
+  padding: 10px 25px; 
+  border-radius: 40px; 
+  color: #ff006e; 
+  font-weight: 800; 
+  border: 4px solid #ffbe0b; 
+}
+
+/* 4. GAME & LEARNING CARDS (RIGHT) [cite: 2026-01-06, 2026-03-09] */
+.gameCard, .finishCard { 
+  background: white; 
+  padding: 35px; 
+  border-radius: 65px; 
+  border: 8px dashed #ffbe0b; 
+  width: 100%; 
+  text-align: center; 
+  box-sizing: border-box; 
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideUp 0.5s ease-out;
+}
+
+.heroImg { 
+  width: 100%; 
+  height: 240px; 
+  object-fit: contain; /* Prevents stretching and overflow [cite: 2026-03-09] */
+  border-radius: 30px; 
+  margin-bottom: 20px; 
+  background: #fdfdfd;
+}
+
+.signLabel { 
+  color: #ff6b6b; 
+  font-size: 2.5rem; 
+  margin-bottom: 20px; 
+  letter-spacing: 2px;
+}
+
+.questionText {
+  color: #1a535c;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* 5. ADAPTIVE QUIZ GRID [cite: 2026-03-09] */
+.choiceGrid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; 
+  margin: 10px 0; 
+  width: 100%; 
+}
+
+.choiceItem { 
+  border: 6px solid #4ecdc4; 
+  border-radius: 40px; 
+  overflow: hidden; 
+  cursor: pointer; 
+  transition: transform 0.2s; 
+  background: #fdfdfd; 
+  height: 140px; 
+  box-shadow: 0 8px 0 #1a535c;
+}
+
+.choiceItem:hover { 
+  transform: scale(1.05); 
+  border-color: #ffbe0b; 
+}
+
+.choiceThumb { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+/* 6. BUTTON PALETTE [cite: 2026-02-28, 2026-03-09] */
+.goBtn { 
+  background: #ff6b6b; 
+  color: white; 
+  padding: 18px; 
+  border-radius: 60px; 
+  font-weight: 800; 
+  font-size: 1.3rem;
+  border: none; 
+  box-shadow: 0 8px 0 #ee5253; 
+  cursor: pointer; 
+  width: 100%; 
+  margin-top: 20px; 
+}
+
+.startBtn { 
+  background: #4ecdc4; 
+  box-shadow: 0 6px 0 #1a535c; 
+  margin-top: 20px;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.stopBtn { 
+  background: #ff6b6b; 
+  box-shadow: 0 6px 0 #ee5253; 
+  margin-top: 20px;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.startBtn:active, .stopBtn:active, .goBtn:active { 
+  transform: translateY(4px); 
+  box-shadow: none; 
+}
+
+.helpBtn { 
+  background: none; 
+  border: none; 
+  color: #95a5a6; 
+  text-decoration: underline; 
+  margin-top: 20px; 
+  cursor: pointer; 
+  font-weight: 700; 
+}
+
+/* 7. FEEDBACK & CELEBRATION [cite: 2026-01-06, 2026-03-09] */
+.feedbackBubble { 
+  margin-top: 25px; 
+  background: white; 
+  padding: 15px 30px; 
+  border-radius: 40px; 
+  color: #ff006e; 
+  font-weight: 800; 
+  border: 4px solid #ffbe0b; 
+  box-shadow: 0 8px 0 #fbc02d; 
+  animation: bounce 0.5s infinite alternate;
+}
+
+.celebrationEmoji {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.finishTitle {
+  color: #4ecdc4;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+/* 8. ADAPTIVE PROGRESS INDICATOR [cite: 2026-01-06] */
+.topBadge { 
+  background: #ffbe0b; 
+  padding: 8px 20px; 
+  border-radius: 25px; 
+  font-size: 1rem; 
+  font-weight: 800; 
+  color: white;
+  display: inline-block;
+  margin: 0 auto 15px auto;
+  box-shadow: 0 4px 0 #fbc02d;
+}
+
+.mainLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+}
+
+.leftSection, .rightSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choiceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.choiceItem {
+  background: #fdfdfd;
+  border: 4px solid #4ecdc4;
+  border-radius: 25px;
+  height: 120px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 0 #1a535c;
+}
+
+.choiceThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevents images from being cut off */
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.detectBtn {
+  background: #ffeb3b;
+  color: #1a535c;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 800;
+  border: none;
+  box-shadow: 0 6px 0 #fbc02d;
+  cursor: pointer;
+}
+
+.countdownOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  color: #ffeb3b;
+  font-weight: 900;
+  text-shadow: 0 0 20px rgba(0,0,0,0.6);
+  z-index: 100;
+  pointer-events: none;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.videoWrapper {
+  width: 100%;
+  max-width: 500px;
+  height: 380px;
+  background: #000;
+  border-radius: 40px;
+  border: 10px solid #4ecdc4;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* .container {
   text-align: center;
   margin-top: 20px;
 }
@@ -19,4 +434,4 @@
   margin-top: 20px;
   font-size: 20px;
   color: #0070f3;
-}
+} */
