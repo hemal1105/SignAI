@@ -21,6 +21,7 @@ import NumbersQuiz from './components/NumbersQuiz';
 import QuizDashboard from './pages/QuizDashboard';
 import AlphabetQuizMap from './pages/AlphabetQuizMap';
 import AlphabetQuizMaster from './components/AlphabetQuizMaster';
+import PracticeMode from './pages/PracticeMode';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/learn" element={<Learn />} />
           <Route path="/learn/numbers" element={<NumbersModule />} />
           <Route path="/quizzes" element={<QuizDashboard />} />
+          <Route path="/practice" element={<PracticeMode />} />
           <Route path="/quizzes/alphabets" element={<AlphabetQuizMap />} />
           <Route path="/quiz/alphabets/master" element={<AlphabetQuizMaster />} />
           <Route path="/quiz/numbers" element={<NumbersQuiz />} />

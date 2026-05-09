@@ -127,6 +127,9 @@ const NumbersQuiz = () => {
                         <button className={`${styles.actionBtn} ${styles.playAgainBtn}`} onClick={startQuiz}>
                             Play Again 🔄
                         </button>
+                        <button className={`${styles.actionBtn} ${styles.practiceBtn}`} onClick={() => navigate('/practice', { state: { startLetter: '1', endLetter: '9' } })}>
+                            Start Practice Mode 🎯
+                        </button>
                         <button className={`${styles.actionBtn} ${styles.backMapBtn}`} onClick={() => navigate('/learn')}>
                             Back to Map 🗺️
                         </button>

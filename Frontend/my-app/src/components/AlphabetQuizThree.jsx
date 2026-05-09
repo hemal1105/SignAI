@@ -113,6 +113,9 @@ const AlphabetQuizThree = () => {
                     <button className={`${styles.actionBtn} ${styles.playAgainBtn}`} onClick={startQuiz}>
                         Play Again 🔄
                     </button>
+                    <button className={`${styles.actionBtn} ${styles.practiceBtn}`} onClick={() => navigate('/practice', { state: { startLetter: 'K', endLetter: 'O' } })}>
+                        Start Practice Mode 🎯
+                    </button>
                     <button className={`${styles.actionBtn} ${styles.backMapBtn}`} onClick={() => navigate('/learn/alphabets')}>
                         Back to Map 🗺️
                     </button>

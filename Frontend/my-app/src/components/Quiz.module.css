@@ -4,6 +4,7 @@
     --btn-green: #06d6a0;
     --btn-red: #ef476f;
     --bg-page: #e0fbfc;
+    --btn-practice: #8338ec;
 }
 
 /* 1. Main Layout */
@@ -254,6 +255,22 @@
 .backMapBtn:active {
     transform: translateY(4px);
     box-shadow: 0 4px 0px #d49f05, 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.practiceBtn {
+    background-color: var(--btn-practice);
+    color: white;
+    box-shadow: 0 8px 0px #611ab8, 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.practiceBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 11px 0px #611ab8, 0 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.practiceBtn:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0px #611ab8, 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* 7. Quiz Title */
